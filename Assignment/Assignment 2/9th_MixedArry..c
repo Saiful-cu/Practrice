@@ -26,7 +26,6 @@ int avg(int *arr, int n)
     int sum = 0,primes =0;
     for(int i=0;i<n;i++)
     {
-       // printf("%d ",*(arr+i));
         sum += *(arr+i);
         primes += prime(arr+i);
     }
