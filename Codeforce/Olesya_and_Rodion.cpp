@@ -1,30 +1,27 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
-
 int main()
 {
-    long long int n,divisior,number=1;
-    cin>>n>>divisior;
-    if(n>divisior)
-    number = divisior;
+    long int x,y,n,i,t;
 
-    for(int i=1;i<n;i++)
-    {
+    cin>>n>>t;
 
-        if(i>1)
+        if(n==1&&t==10)
+            cout<<"-1\n";
+        else if(n>=2&&t==10)
         {
-            number *= 10;
-            number += divisior;
+            for(i=1;i<n;i++){
+                cout<<"1";
+            }
+            cout<<"0\n";
         }
         else
         {
-            number *= 11;
+            for(i=1;i<=n;i++){
+                cout<<t;
+            }
+            cout<<endl;
         }
-    }
 
-        if(number%divisior==0)
-            cout<<number;
-        else
-            cout<<-1;
     return 0;
 }
