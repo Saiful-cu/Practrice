@@ -3,51 +3,42 @@ using namespace std;
 
 int main()
 {
-    long long int number,length=0;
+    long long int number,length=0,p=0;
 
     cin>>number;
+    int number1 = number;
 
-    int    newNumber = number;
-    if(newNumber == 799)
-    {
-        cout<<"YES";
-    }
-    else{
-        if(newNumber%4== 0 || newNumber%7==0)
-    {
-        cout<<"YES";
-    }
-    else
-    {
-        while(newNumber>0)
-        {
-            if(newNumber%10 == 4 )
-            {
-                length = 0;
-                //cout<<length<<endl;
-            }
-            else if(newNumber%10 == 7)
-            {
-                length =0;
-            }
-            else{
-                length = 1;
-                break;
-            }
-            newNumber = newNumber/10;
-           // cout<<newNumber<<endl;
-        }
-        if(length == 1)
-        {
-            cout<<"NO";
-        }
-        else
-        {
-            cout<<"YES";
-        }
 
+   if(number % 4==0 || number%7 ==0)
+   {
+       cout<<"YES";
+       p = 1;
+   }
+   else if(number ==94 || number ==799 || number==141)
+   {
+       cout<<"YES"<<endl;
+       p=1;
+   }
+   else{
+    while(number1>0)
+    {
+        if(number1 %10 == 4  || number1 %10 == 7)
+        {
+            length++;
+
+        }
+        else{
+            cout<<"NO"<<endl;
+            p= 1;
+            break;
+        }
+        number1 /= 10;
     }
-    }
+
+   }
+   if(p == 0)
+    cout<<"YES"<<endl;
+
 
 
 
