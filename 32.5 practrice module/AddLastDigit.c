@@ -1,15 +1,13 @@
 #include<stdio.h>
 
-int AddLastDigit(int arr[],int n,int sum)
+int AddLastDigit(int arr[],int n)
 {
-    while(n!=0)
+    int r = arr[n]%10;
+    if(n<0)
     {
-        sum += arr[n-1]%10;
-         printf("%d \n",sum);
-        n -=1;
-        AddLastDigit(arr,n,sum);
+        return 0;
     }
-    return sum;
+    return r+AddLastDigit(arr,n-1);
 
 }
 
@@ -22,8 +20,8 @@ int main()
     {
         scanf("%d",&arr[i]);
     }
-    int sum = 0;
-    sum = AddLastDigit(arr,n,sum);
+
+    int sum = AddLastDigit(arr,n-1);
 
     printf("%d",sum);
 

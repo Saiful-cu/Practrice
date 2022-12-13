@@ -1,14 +1,13 @@
 #include<stdio.h>
 
-int power(int n, int pow,int p)
+int power(int n, int pow)
 {
-    while(pow!=0)
-    {
-        n = n*p;
-        pow -=1;
-        power(n,pow,p);
-    }
-    return n;
+   if(pow == 0)
+   {
+       return 1;
+   }
+   return n*power(n,pow-1);
+
 }
 
 int main()
@@ -17,7 +16,7 @@ int main()
 
     scanf("%d %d",&n,&pow);
 
-    n = power(n,pow-1,n);
+    n = power(n,pow);
     printf("%d",n);
 
 
