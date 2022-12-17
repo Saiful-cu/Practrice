@@ -14,6 +14,7 @@ int main()
     {
         fscanf(inputFile,"%d",&n);
         int t = n;
+
         if(n>0)
         {
             for(int j=0; j<(2*n)+1; j++)
@@ -23,9 +24,9 @@ int main()
                 t -=1;
             }
         }
-        else if(n<0)
+        else
         {
-            fprintf(outputFile,"99");
+            n = -n;
             for(int j=0; j<(2*n)+1; j++)
             {
                 fprintf(outputFile,"%d ",t);
